@@ -1,4 +1,18 @@
-autogen-agentchat>=0.2.0
-autogen-ext[openai]>=0.2.0
-pandas
-seaborn
+# Core agent framework
+autogen-agentchat>=0.4.0
+autogen-ext[openai]>=0.4.0
+
+# LLM API client (used by llm_judge.py and as autogen backend)
+openai>=1.0.0
+
+# Environment / config
+python-dotenv>=1.0.0
+
+# Data analysis and plotting (notebooks/analysis.ipynb)
+pandas>=2.0.0
+numpy>=1.24.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Async helpers (needed in Jupyter)
+nest_asyncio>=1.6.0
