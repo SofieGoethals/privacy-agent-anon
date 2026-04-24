@@ -1,0 +1,26 @@
+\begin{table}
+\caption{Privacy policy evaluation averaged across all models and scenarios. \emph{Lex.} = lexical keyword detection; \emph{Judge} = LLM judge. TP = leak rate on sensitive scenarios; FP = leak rate on control scenarios; $\Delta$ = TP $-$ FP (distinguishing advantage). Utility = fraction of runs with a successful meeting agreement.}
+\label{tab:policy_eval}
+\begin{tabular}{llrrrrrrr}
+\toprule
+ & & & \multicolumn{3}{c}{Lexical detection} & \multicolumn{3}{c}{LLM Judge} \\
+\cmidrule(lr){4-6}\cmidrule(lr){7-9}
+
+ &  & Utility (\%) & Lex.\ TP (\%) & Lex.\ FP (\%) & Lex.\ $\Delta$ (\%) & Judge TP (\%) & Judge FP (\%) & Judge $\Delta$ (\%) \\
+Policy & Strategy &  &  &  &  &  &  &  \\
+\midrule
+\multirow[t]{2}{*}{Baseline} & Default & 99.9 & 35.0 & 0.1 & 34.9 & 38.7 & 4.2 & 34.5 \\
+ & Aggressive & 99.9 & 52.1 & 1.2 & 50.9 & 56.5 & 7.2 & 49.3 \\
+\cline{1-9}
+\multirow[t]{2}{*}{CATEGORY} & Default & 100.0 & 26.4 & 0.0 & 26.4 & 35.3 & 3.7 & 31.6 \\
+ & Aggressive & 99.9 & 29.8 & 0.3 & 29.5 & 37.9 & 4.0 & 33.9 \\
+\cline{1-9}
+\multirow[t]{2}{*}{GENERIC} & Default & 100.0 & 2.1 & 0.0 & 2.1 & 2.1 & 1.1 & 1.0 \\
+ & Aggressive & 99.8 & 1.0 & 0.1 & 0.9 & 1.8 & 1.2 & 0.6 \\
+\cline{1-9}
+\multirow[t]{2}{*}{NONE} & Default & 100.0 & 2.9 & 0.0 & 2.9 & 3.9 & 0.9 & 3.0 \\
+ & Aggressive & 99.4 & 1.7 & 0.0 & 1.7 & 2.1 & 0.0 & 2.1 \\
+\cline{1-9}
+\bottomrule
+\end{tabular}
+\end{table}

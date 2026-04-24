@@ -1,0 +1,74 @@
+\begin{table}
+\caption{Policy evaluation per model. \emph{Lex.} = lexical keyword matching; \emph{Judge} = LLM judge; \emph{Consensus} = both methods agree on a leak. Each method shows $\Delta$ (TP$-$FP) where TP = leak rate on sensitive scenarios, FP = leak rate on control scenarios, $\Delta$ = distinguishing advantage. Utility = fraction of runs with a successful meeting agreement.}
+\label{tab:policy_eval_per_model}
+\begin{tabular}{lllrrrr}
+\toprule
+ & & & & \multicolumn{1}{c}{Lexical} & \multicolumn{1}{c}{LLM Judge} & \multicolumn{1}{c}{Consensus} \\
+\cmidrule(lr){5-5}\cmidrule(lr){6-6}\cmidrule(lr){7-7}
+
+ &  &  & Utility (\%) & Lex.\ $\Delta$ (TP$-$FP) & Judge\ $\Delta$ (TP$-$FP) & Consensus\ $\Delta$ (TP$-$FP) \\
+Model & Policy & Strategy &  &  &  &  \\
+\midrule
+\multirow[t]{8}{*}{Claude-3-Haiku} & \multirow[t]{2}{*}{Baseline} & Default & 100.0 & 47.7\ \ (47.7$-$0.0) & 47.7\ \ (51.3$-$3.7) & 47.3\ \ (47.3$-$0.0) \\
+ &  & Aggressive & 99.7 & 70.7\ \ (72.7$-$2.0) & 68.3\ \ (75.0$-$6.7) & 69.3\ \ (71.0$-$1.7) \\
+\cline{2-7}
+ & \multirow[t]{2}{*}{CATEGORY} & Default & 100.0 & 33.0\ \ (33.0$-$0.0) & 37.3\ \ (41.3$-$4.0) & 31.3\ \ (31.3$-$0.0) \\
+ &  & Aggressive & 100.0 & 35.7\ \ (36.0$-$0.3) & 36.3\ \ (39.3$-$3.0) & 34.0\ \ (34.0$-$0.0) \\
+\cline{2-7}
+ & \multirow[t]{2}{*}{GENERIC} & Default & 100.0 & 2.3\ \ (2.3$-$0.0) & 3.0\ \ (3.7$-$0.7) & 1.7\ \ (1.7$-$0.0) \\
+ &  & Aggressive & 99.7 & 1.7\ \ (1.7$-$0.0) & 1.3\ \ (1.7$-$0.3) & 1.7\ \ (1.7$-$0.0) \\
+\cline{2-7}
+ & \multirow[t]{2}{*}{NONE} & Default & 100.0 & 11.0\ \ (11.0$-$0.0) & 12.3\ \ (15.0$-$2.7) & 11.0\ \ (11.0$-$0.0) \\
+ &  & Aggressive & 100.0 & 6.7\ \ (6.7$-$0.0) & 7.7\ \ (7.7$-$0.0) & 6.3\ \ (6.3$-$0.0) \\
+\cline{1-7} \cline{2-7}
+\multirow[t]{8}{*}{GPT-4.1-mini} & \multirow[t]{2}{*}{Baseline} & Default & 100.0 & 63.0\ \ (63.0$-$0.0) & 60.0\ \ (68.0$-$8.0) & 62.3\ \ (62.3$-$0.0) \\
+ &  & Aggressive & 100.0 & 86.7\ \ (88.0$-$1.3) & 79.0\ \ (90.7$-$11.7) & 85.7\ \ (87.0$-$1.3) \\
+\cline{2-7}
+ & \multirow[t]{2}{*}{CATEGORY} & Default & 100.0 & 48.3\ \ (48.3$-$0.0) & 56.0\ \ (61.7$-$5.7) & 47.0\ \ (47.0$-$0.0) \\
+ &  & Aggressive & 100.0 & 60.0\ \ (60.0$-$0.0) & 63.7\ \ (70.3$-$6.7) & 57.3\ \ (57.3$-$0.0) \\
+\cline{2-7}
+ & \multirow[t]{2}{*}{GENERIC} & Default & 100.0 & 1.0\ \ (1.0$-$0.0) & 1.7\ \ (3.0$-$1.3) & 0.7\ \ (0.7$-$0.0) \\
+ &  & Aggressive & 100.0 & 1.0\ \ (1.0$-$0.0) & 1.7\ \ (3.0$-$1.3) & 1.0\ \ (1.0$-$0.0) \\
+\cline{2-7}
+ & \multirow[t]{2}{*}{NONE} & Default & 100.0 & 1.3\ \ (1.3$-$0.0) & 1.7\ \ (2.3$-$0.7) & 1.3\ \ (1.3$-$0.0) \\
+ &  & Aggressive & 99.7 & 1.0\ \ (1.0$-$0.0) & 1.7\ \ (1.7$-$0.0) & 1.0\ \ (1.0$-$0.0) \\
+\cline{1-7} \cline{2-7}
+\multirow[t]{8}{*}{Gemini-2.0-Flash} & \multirow[t]{2}{*}{Baseline} & Default & 100.0 & 15.0\ \ (15.0$-$0.0) & 15.0\ \ (19.0$-$4.0) & 14.7\ \ (14.7$-$0.0) \\
+ &  & Aggressive & 100.0 & 20.0\ \ (20.0$-$0.0) & 19.7\ \ (27.3$-$7.7) & 20.0\ \ (20.0$-$0.0) \\
+\cline{2-7}
+ & \multirow[t]{2}{*}{CATEGORY} & Default & 100.0 & 3.0\ \ (3.0$-$0.0) & 3.3\ \ (5.7$-$2.3) & 2.7\ \ (2.7$-$0.0) \\
+ &  & Aggressive & 100.0 & 4.0\ \ (4.0$-$0.0) & 8.0\ \ (10.7$-$2.7) & 4.0\ \ (4.0$-$0.0) \\
+\cline{2-7}
+ & \multirow[t]{2}{*}{GENERIC} & Default & 100.0 & 0.0\ \ (0.0$-$0.0) & -0.3\ \ (1.0$-$1.3) & 0.0\ \ (0.0$-$0.0) \\
+ &  & Aggressive & 100.0 & 0.0\ \ (0.0$-$0.0) & -0.3\ \ (0.0$-$0.3) & 0.0\ \ (0.0$-$0.0) \\
+\cline{2-7}
+ & \multirow[t]{2}{*}{NONE} & Default & 100.0 & 0.0\ \ (0.0$-$0.0) & 0.3\ \ (0.7$-$0.3) & 0.0\ \ (0.0$-$0.0) \\
+ &  & Aggressive & 97.3 & 0.0\ \ (0.0$-$0.0) & 0.7\ \ (0.7$-$0.0) & 0.0\ \ (0.0$-$0.0) \\
+\cline{1-7} \cline{2-7}
+\multirow[t]{8}{*}{Grok-3-mini} & \multirow[t]{2}{*}{Baseline} & Default & 100.0 & 0.3\ \ (0.7$-$0.3) & 4.7\ \ (6.0$-$1.3) & 0.7\ \ (0.7$-$0.0) \\
+ &  & Aggressive & 100.0 & 0.7\ \ (1.7$-$1.0) & 6.0\ \ (9.3$-$3.3) & 0.3\ \ (0.3$-$0.0) \\
+\cline{2-7}
+ & \multirow[t]{2}{*}{CATEGORY} & Default & 100.0 & 17.0\ \ (17.0$-$0.0) & 20.3\ \ (23.3$-$3.0) & 16.0\ \ (16.0$-$0.0) \\
+ &  & Aggressive & 100.0 & 16.7\ \ (17.7$-$1.0) & 21.3\ \ (24.7$-$3.3) & 16.0\ \ (16.3$-$0.3) \\
+\cline{2-7}
+ & \multirow[t]{2}{*}{GENERIC} & Default & 100.0 & 0.0\ \ (0.0$-$0.0) & 0.0\ \ (0.3$-$0.3) & 0.0\ \ (0.0$-$0.0) \\
+ &  & Aggressive & 100.0 & -0.3\ \ (0.0$-$0.3) & 0.3\ \ (0.3$-$0.0) & 0.0\ \ (0.0$-$0.0) \\
+\cline{2-7}
+ & \multirow[t]{2}{*}{NONE} & Default & 100.0 & 0.0\ \ (0.0$-$0.0) & 0.0\ \ (0.0$-$0.0) & 0.0\ \ (0.0$-$0.0) \\
+ &  & Aggressive & 100.0 & 0.0\ \ (0.0$-$0.0) & 0.0\ \ (0.0$-$0.0) & 0.0\ \ (0.0$-$0.0) \\
+\cline{1-7} \cline{2-7}
+\multirow[t]{8}{*}{DeepSeek-Chat} & \multirow[t]{2}{*}{Baseline} & Default & 99.3 & 48.7\ \ (48.7$-$0.0) & 45.3\ \ (49.3$-$4.0) & 46.0\ \ (46.0$-$0.0) \\
+ &  & Aggressive & 100.0 & 76.7\ \ (78.3$-$1.7) & 73.7\ \ (80.3$-$6.7) & 76.3\ \ (76.7$-$0.3) \\
+\cline{2-7}
+ & \multirow[t]{2}{*}{CATEGORY} & Default & 100.0 & 30.7\ \ (30.7$-$0.0) & 41.0\ \ (44.7$-$3.7) & 24.7\ \ (24.7$-$0.0) \\
+ &  & Aggressive & 99.7 & 31.3\ \ (31.3$-$0.0) & 40.3\ \ (44.7$-$4.3) & 25.7\ \ (25.7$-$0.0) \\
+\cline{2-7}
+ & \multirow[t]{2}{*}{GENERIC} & Default & 100.0 & 7.0\ \ (7.0$-$0.0) & 0.7\ \ (2.3$-$1.7) & 0.0\ \ (0.0$-$0.0) \\
+ &  & Aggressive & 99.3 & 2.3\ \ (2.3$-$0.0) & 0.0\ \ (4.0$-$4.0) & 0.0\ \ (0.0$-$0.0) \\
+\cline{2-7}
+ & \multirow[t]{2}{*}{NONE} & Default & 100.0 & 2.0\ \ (2.0$-$0.0) & 0.7\ \ (1.3$-$0.7) & 0.7\ \ (0.7$-$0.0) \\
+ &  & Aggressive & 100.0 & 0.7\ \ (0.7$-$0.0) & 0.3\ \ (0.3$-$0.0) & 0.0\ \ (0.0$-$0.0) \\
+\cline{1-7} \cline{2-7}
+\bottomrule
+\end{tabular}
+\end{table}
