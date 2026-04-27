@@ -16,7 +16,9 @@ This repository contains the benchmark code, pre-computed results, and the analy
 │   └── llm_judge.py                  # LLM-as-a-judge for privacy leakage detection
 ├── run_all.py                        # Runs the full benchmark suite in parallel
 ├── notebooks/
-│   └── analysis.ipynb                # Reproduces all figures and tables from pre-computed results
+│   ├── analysis.ipynb                # Reproduces all figures and tables from pre-computed results
+│   ├── policy_aware_analysis.ipynb   # Policy-condition analysis (CATEGORY / GENERIC / NONE)
+│   └── temperature_ablation.ipynb    # Temperature ablation study (T=0.3/1.0/1.5, Gemini Flash)
 ├── results/                          # Pre-computed results (judged JSONL + CSV summaries)
 └── Figures/                          # Generated figures and LaTeX tables
 ```

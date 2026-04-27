@@ -45,8 +45,8 @@ from dotenv import load_dotenv
 # Configuration
 # ---------------------------------------------------------------------------
 
-
-load_dotenv()  # load OPENROUTER_API_KEY from .env
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
 JUDGE_MODEL: str = os.environ.get("JUDGE_MODEL", "google/gemini-2.0-flash-001")
 JUDGE_BASE_URL: str = os.environ.get(

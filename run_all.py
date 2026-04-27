@@ -81,7 +81,7 @@ import asyncio, os, sys
 sys.path.insert(0, {src_dir!r})
 
 from dotenv import load_dotenv
-load_dotenv()  # load OPENROUTER_API_KEY from .env
+load_dotenv(os.path.join({root_dir!r}, ".env"))
 
 from scenarios import create_100_scenarios, create_control_scenario
 from privacy_benchmark_flexible import run_benchmark
@@ -144,7 +144,7 @@ import asyncio, glob, os, sys
 sys.path.insert(0, {src_dir!r})
 
 from dotenv import load_dotenv
-load_dotenv()  # load OPENROUTER_API_KEY from .env
+load_dotenv(os.path.join({root_dir!r}, ".env"))
 
 from llm_judge import judge_results_file_async
 from scenarios import create_100_scenarios
