@@ -14,7 +14,7 @@ doesn't interfere with real results.
 
 Each model runs in its own subprocess, executing both:
   1. privacy_benchmark_flexible.py  (baseline / FULL policy)
-  2. privacy_mitigation.py          (3 mitigation policies: CATEGORY, GENERIC, NONE)
+  2. privacy_mitigation.py          (2 mitigation policies: CATEGORY, GENERIC)
 
 After all subprocesses finish, the LLM judge is run on all result files.
 """
@@ -85,7 +85,7 @@ load_dotenv(os.path.join({root_dir!r}, ".env"))
 
 from scenarios import create_100_scenarios, create_control_scenario
 from privacy_benchmark_flexible import run_benchmark
-from privacy_mitigation import run_mitigation_benchmark, policy_category, policy_generic, policy_none
+from privacy_mitigation import run_mitigation_benchmark, policy_category, policy_generic
 
 CHAT_MODEL_INFO = {chat_model_info!r}
 API_KEY = os.environ.get("OPENROUTER_API_KEY")
@@ -124,7 +124,7 @@ print(f"[{{model_cfg['model']}}] Starting mitigation benchmark...")
 asyncio.run(run_mitigation_benchmark(
     models=[model_cfg],
     scenarios=scenarios,
-    policies=[policy_category(), policy_generic(), policy_none()],
+    policies=[policy_category(), policy_generic()],
     repetitions=repetitions,
     attacker_strategies={mitigation_strategies!r},
     out_dir=out_dir,

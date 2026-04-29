@@ -12,7 +12,7 @@ This repository contains the benchmark code, pre-computed results, and the analy
 ├── src/
 │   ├── scenarios.py                  # 100 negotiation scenarios + control variants
 │   ├── privacy_benchmark_flexible.py # Baseline benchmark runner
-│   ├── privacy_mitigation.py         # Mitigation policy runner (CATEGORY / GENERIC / NONE)
+│   ├── privacy_mitigation.py         # Mitigation policy runner (CATEGORY / GENERIC)
 │   └── llm_judge.py                  # LLM-as-a-judge for privacy leakage detection
 ├── run_all.py                        # Runs the full benchmark suite in parallel
 ├── notebooks/
@@ -86,7 +86,7 @@ All models are accessed via OpenRouter:
 - `summary_*.csv` — one row per run, keyword-detection fields
 - `*_judged.jsonl` — same runs with LLM judge scores added (`llm_judge_leaked`, `llm_judge_severity`, `llm_judge_evidence`)
 
-Files prefixed `runs_mitigation_` correspond to the three privacy policy conditions (CATEGORY, GENERIC, NONE); the others are baseline runs.
+Files prefixed `runs_mitigation_` correspond to the two privacy policy conditions (CATEGORY, GENERIC); the others are baseline runs.
 
 ---
 
