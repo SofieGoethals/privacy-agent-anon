@@ -6,3 +6,4 @@ venv/
 .run_workers/
 *.egg-info/
 .DS_Store
+Figures/
