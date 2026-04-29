@@ -1,6 +1,7 @@
 # Privacy Benchmark Artifact
 
-Artifact for the paper *[Title redacted for review]*.
+Artifact for the paper *Exfiltration by Explanation:
+A Novel Threat Model for Negotiating LLM Agents*.
 
 This repository contains the benchmark code, pre-computed results, and the analysis notebook needed to reproduce all figures and tables in the paper.
 
