@@ -125,7 +125,7 @@ def find_agreement_text(transcript: List[Dict[str, Any]]) -> str:
 # ============================================================
 
 # Keywords excluded from detection due to high false-positive rates
-# in the control group (see keyword_analysis.ipynb for analysis)
+# in the control group
 KEYWORDS_TO_EXCLUDE: set = {
     "work", "sat", "event", "appointment", "will", "call",
     "preparation", "shift", "planning", "professional",

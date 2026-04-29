@@ -16,8 +16,7 @@ This repository contains the benchmark code, pre-computed results, and the analy
 │   └── llm_judge.py                  # LLM-as-a-judge for privacy leakage detection
 ├── run_all.py                        # Runs the full benchmark suite in parallel
 ├── notebooks/
-│   ├── analysis.ipynb                # Reproduces all figures and tables from pre-computed results
-│   ├── policy_aware_analysis.ipynb   # Policy-condition analysis (CATEGORY / GENERIC / NONE)
+│   ├── policy_aware_analysis.ipynb   # Policy-condition analysis (CATEGORY / GENERIC)
 │   └── temperature_ablation.ipynb    # Temperature ablation study (T=0.3/1.0/1.5, Gemini Flash)
 ├── results/                          # Pre-computed results (judged JSONL + CSV summaries)
 └── Figures/                          # Generated figures and LaTeX tables
@@ -31,7 +30,7 @@ This is the fastest path and does not require any API keys.
 
 ```bash
 pip install -r requirements.txt
-jupyter notebook notebooks/analysis.ipynb
+jupyter notebook notebooks/policy_aware_analysis.ipynb
 ```
 
 Run all cells. The notebook reads from `results/` and writes figures to `Figures/`. All paper figures and tables are produced this way.
@@ -56,7 +55,7 @@ cp .env.example .env
 python run_all.py
 ```
 
-Results are written to `privacy_benchmark_results/run_<timestamp>/`. After the run completes, update `RESULTS_DIR` in `notebooks/analysis.ipynb` to point at the new folder.
+Results are written to `privacy_benchmark_results/run_<timestamp>/`. After the run completes, update `RESULTS_DIR` in `notebooks/policy_aware_analysis.ipynb` to point at the new folder.
 
 **Smoke test** (2 models × 2 scenarios × 1 rep, ~5 min, ~$0.10):
 

@@ -8,7 +8,7 @@ openai>=1.0.0
 # Environment / config
 python-dotenv>=1.0.0
 
-# Data analysis and plotting (notebooks/analysis.ipynb)
+# Data analysis and plotting (notebooks/policy_aware_analysis.ipynb, notebooks/temperature_ablation.ipynb)
 pandas>=2.0.0
 numpy>=1.24.0
 matplotlib>=3.7.0
