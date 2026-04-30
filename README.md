@@ -18,9 +18,8 @@ This repository contains the benchmark code, pre-computed results, and the analy
 ├── run_all.py                        # Runs the full benchmark suite in parallel
 ├── notebooks/
 │   ├── policy_aware_analysis.ipynb   # Policy-condition analysis (CATEGORY / GENERIC)
-│   └── temperature_ablation.ipynb    # Temperature ablation study (T=0.3/1.0/1.5, Gemini Flash)
-├── results/                          # Pre-computed results (judged JSONL + CSV summaries)
-└── Figures/                          # Generated figures and LaTeX tables
+│   └── temperature_ablation.ipynb    # Temperature ablation study (T=0.3/1.0/1.5, GPT-4.1-mini)
+└── results/                          # Pre-computed results (judged JSONL + CSV summaries)
 ```
 
 ---
@@ -34,7 +33,7 @@ pip install -r requirements.txt
 jupyter notebook notebooks/policy_aware_analysis.ipynb
 ```
 
-Run all cells. The notebook reads from `results/` and writes figures to `Figures/`. All paper figures and tables are produced this way.
+Run all cells. The notebook reads from `results/` and writes figures to a `Figures/` directory (created on first run). All paper figures and tables are produced this way.
 
 ---
 
@@ -85,7 +84,7 @@ All models are accessed via OpenRouter:
 `results/` contains the output of the final benchmark run (April 2026):
 
 - `summary_*.csv` — one row per run, keyword-detection fields
-- `*_judged.jsonl` — same runs with LLM judge scores added (`llm_judge_leaked`, `llm_judge_severity`, `llm_judge_evidence`)
+- `*_judged.jsonl` — runs with LLM judge scores added (`llm_judge_leaked`, `llm_judge_severity`, `llm_judge_evidence`); unjudged intermediates are not archived
 
 Files prefixed `runs_mitigation_` correspond to the two privacy policy conditions (CATEGORY, GENERIC); the others are baseline runs.
 

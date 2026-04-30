@@ -356,7 +356,7 @@ async def run_mitigation_benchmark(
     models: List[Dict[str, str]],
     scenarios: List[NegotiationScenario],
     policies: Optional[List[UserPolicy]] = None,
-    repetitions: int = 5,
+    repetitions: int = 3,
     attacker_strategies: Optional[List[str]] = None,
     out_dir: str = "privacy_benchmark_results",
     max_messages: int = 14,
@@ -594,7 +594,7 @@ if __name__ == "__main__":
         models=models,
         scenarios=scenarios,
         policies=policies,
-        repetitions=3,  # reduced from 5 for cost savings; use run_all.py to launch per-model
+        repetitions=3,
         attacker_strategies=["default", "aggressive"],
         out_dir="privacy_benchmark_results",
         max_messages=14,

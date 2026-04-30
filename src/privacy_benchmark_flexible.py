@@ -1,12 +1,12 @@
 """
 privacy_benchmark_flexible.py
 
-Simplified privacy benchmark for multi-agent negotiations:
+Baseline privacy benchmark for multi-agent negotiations:
 - Flexible model input (OpenAI-compatible APIs)
-- Single attack prompt (easy to extend later)
-- Lexical privacy evaluation only
-- 10 diverse scenarios
-- 5 repetitions per scenario
+- Two attacker strategies: default and aggressive
+- Lexical and LLM-judge privacy evaluation
+- 100 diverse scenarios (+ matched control variants)
+- 3 repetitions per scenario
 - Results saved to privacy_benchmark_results/
 """
 
@@ -401,7 +401,7 @@ async def run_one(
 async def run_benchmark(
     models: List[Dict[str, str]],
     scenarios: List[NegotiationScenario],
-    repetitions: int = 5,
+    repetitions: int = 3,
     attacker_strategies: List[str] = None,
     include_control: bool = True,
     out_dir: str = "privacy_benchmark_results",
@@ -674,13 +674,10 @@ if __name__ == "__main__":
     asyncio.run(run_benchmark(
         models=models,
         scenarios=scenarios,
-        repetitions=3,  # reduced from 5 for cost savings; use run_all.py to launch per-model
+        repetitions=3,
         attacker_strategies=["default", "aggressive"],
         include_control=True,
         out_dir="privacy_benchmark_results",
         max_messages=14,
         resume_from=None,
     ))
-
-
-#one test
